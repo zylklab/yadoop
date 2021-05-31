@@ -1,0 +1,22 @@
+---
+- hosts: "localhost"
+  connection: "local"
+  vars:
+    users:
+    - hdfs
+    - yarn
+    - tez
+    - zookeeper
+    groups:
+    - docker
+    - hadoop
+  tasks:
+  - name: "Create groups"
+    group:
+      name: "{{ item }}"
+    with_items: "{{ groups }}"
+  - name: "Create user accounts and add users to grou"
+    user:
+      name: "{{ item }}"
+      groups: "hadoop"
+    with_items: "{{ users }}"
