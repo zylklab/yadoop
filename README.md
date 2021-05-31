@@ -1,6 +1,6 @@
 ## Playbooks list
- * Base
- * Zookeeper
+ * Base (Users and Groups)
+ * Zookeeper (Service)
  * HDFS
  * YARN
  * TEZ
